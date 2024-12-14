@@ -1,0 +1,78 @@
+.container {
+    display: flex;
+    align-items: center;
+    margin: auto;
+    height: 60px;
+    width: 100%;
+    box-shadow: 3px 2px 2px grey;
+    position: fixed;
+    z-index: 50;
+    justify-content: flex-end;
+}
+
+.logo {
+    height: 60px;
+}
+
+.data {
+    display: flex;
+    margin-left: 750px;
+    margin-right: 20px;
+    gap: 25px;
+}
+
+.icon {
+    height: 100%;
+    width: 25px;
+    margin-right: 40px;
+    cursor: pointer;
+}
+
+.icon-container {
+    position: relative;
+}
+
+.dot {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-color: tomato;
+    border-radius: 50%;
+    left: 16px;
+    top: 5px;
+}
+
+.icons {
+    display: flex;
+}
+
+.dropdown {
+    width: 130px;
+    height: 60px;
+    display: flex;
+    flex-direction: column;
+    padding-top: 15px;
+    padding-left: 15px;
+    border-radius: 6px;
+    box-shadow: 3px 5px 5px grey;
+    position: absolute;
+    top: 50px;
+    right: 0;
+    background-color: white;
+    z-index: 100;
+    row-gap: 5px;
+}
+
+.dropdown a {
+    text-decoration: none; 
+    color: black;
+}
+
+.container a{
+    text-decoration: none; 
+    color: black;
+}
+
+.dropdown a:visited {
+    color: black; 
+}
