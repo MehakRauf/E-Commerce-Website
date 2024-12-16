@@ -20,6 +20,7 @@ const Header = () => {
         dispatch(logoutReducer());
         toast("Logged out successfully!");
     }
+
     return (
         <header>
             <div className="container">
@@ -54,8 +55,8 @@ const Header = () => {
                             <div>
                                 {showMenu && (
                                     <div className="dropdown" ref={dropdownRef}>
-                                        <Link to="newproduct">New Products</Link>
-                                        {userData.email ? <p className="logout" onClick={handleLogOut}>Log out</p> : <Link to="login">Login</Link>}
+                                        {userData.email == "mehak.fatima2386@gmail.com" && <Link to="newproduct">New Products</Link>}
+                                        {userData.email ? <p className="logout" onClick={handleLogOut}>Log out ({userData.firstName})</p> : <Link to="login">Login</Link>}
                                     </div>
                                 )}
                             </div>

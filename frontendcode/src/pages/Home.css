@@ -1,0 +1,59 @@
+div {
+    margin: 0; /* or set a smaller value, like margin: 5px; */
+    line-height: 1; 
+  }
+.bikeIcon {
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+}
+
+.main1 {
+    padding-top: 80px;
+    padding-left: 15px;
+    display: flex;
+}
+
+.data-container {
+    font-size: 2.15rem;
+}
+
+.data-container span{
+    color: red;
+}
+
+.data-container p{
+    font-size: 1.5rem;
+}
+
+.delivery-container {
+    gap: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgb(155, 155, 128);
+    width: 140px;
+    border-radius: 30px;
+    height: 40px;
+}
+
+.main2{
+    width: 50%;
+}
+
+.main3{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main2 button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 120px;
+    height: 40px;
+    background-color: red;
+    color: white;
+}

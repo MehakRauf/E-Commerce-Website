@@ -1,5 +1,6 @@
 import './App.css'
 import { Routes, Route } from 'react-router-dom';
+import { useEffect } from 'react';
 import toast, { Toaster } from 'react-hot-toast';
 import Header from './components/header'
 import Home from './pages/Home';
@@ -9,9 +10,19 @@ import Contact from './pages/Contact';
 import Login from './pages/Login';
 import NewProduct from './pages/NewProduct';
 import Signup from './pages/Signup';
+import { useDispatch} from 'react-redux';
+import { setData } from './redux/productSlice';
 
 function App() {
-
+  const dispatch = useDispatch();
+  
+  useEffect(() => {
+    (async () => {
+      const fetchData = await fetch("http://localhost:8080/products")
+      const res = await fetchData.json();
+      dispatch(setData(res));
+    })()
+  }, [])
   return (
     <>
       <Toaster />

@@ -48,11 +48,12 @@
 
 .dropdown {
     width: 130px;
-    height: 60px;
+    height: fit-content;
     display: flex;
     flex-direction: column;
     padding-top: 15px;
     padding-left: 15px;
+    padding-bottom: 10px;
     border-radius: 6px;
     box-shadow: 3px 5px 5px grey;
     position: absolute;
@@ -75,4 +76,8 @@
 
 .dropdown a:visited {
     color: black; 
+}
+
+.logout{
+    background-color: red;
 }

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import '../../src/index.css';
 import './NewProduct.css';
 import { ImagetoBase64 } from '../utility/ImagetoBase64';
+import toast from 'react-hot-toast';
 
 const NewProduct = () => {
   const [data, setData] = useState({
@@ -17,9 +18,32 @@ const NewProduct = () => {
     setData({ ...data, image: base64Data });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Form data:", data);
+    const { name, category, description, image, price } = data;
+    if (name && category && description && image && price) {
+      const fetchData = await fetch("http://localhost:8080/newproducts", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify(data)
+      })
+      const data1 = await fetchData.json();
+      toast("Data entered successfully!");
+      setData(() => {
+        return {
+          name: "",
+          image: "",
+          price: "",
+          description: "",
+          category: "",
+        }
+      })
+    }
+    else {
+      toast("Please enter the required fields!");
+    }
   };
 
   return (
@@ -38,16 +62,22 @@ const NewProduct = () => {
             value={data.category}
             onChange={(e) => setData({ ...data, category: e.target.value })}
           >
+            <option value="others">Select category</option>
             <option value="Fruits">Fruits</option>
             <option value="Vegetables">Vegetables</option>
             <option value="Dosa">Dosa</option>
             <option value="Pizza">Pizza</option>
             <option value="Ice Cream">Ice Cream</option>
+            <option value="Rice">Rice</option>
+            <option value="Cake">Cake</option>
+            <option value="Burger">Burger</option>
+            <option value="Paneer">Paneer</option>
+            <option value="Sandwich">Sandwich</option>
           </select>
 
           <label htmlFor="image">Image</label>
           <div className="imageContainer">
-            {data.image ? <img src={data.image} alt="" className='product-image'/> : <input type="file" onChange={uploadImage} />}
+            {data.image ? <img src={data.image} alt="" className='product-image' /> : <input type="file" onChange={uploadImage} />}
           </div>
 
           <label htmlFor="price">Price</label>
