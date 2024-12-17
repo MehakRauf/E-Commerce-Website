@@ -1,7 +1,8 @@
 import React from 'react';
-import '../../src/index.css';
 import { useParams } from 'react-router-dom';
-import { useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+import { addToCart } from '../redux/productSlice';
+import '../../src/index.css';
 import './Menu.css';
 
 const Menu = () => {
@@ -14,7 +15,16 @@ const Menu = () => {
   }
 
   const product = filteredData[0];
-
+  const dispatch = useDispatch();
+  const addItem = () => {
+    dispatch(addToCart({
+      name: product.name,
+      category: product.category,
+      _id: product.id,
+      image: product.image,
+      price: product.price
+    }));
+  }
   return (
     <div className=" main">
       <div className='menu-container'>
@@ -29,7 +39,7 @@ const Menu = () => {
           <p className="menu-description">{product.description}</p>
           <div className="menu-buttons">
             <button className="menu-button buy-button">Buy</button>
-            <button className="menu-button cart-button">Add to Cart</button>
+            <button className="menu-button cart-button" onClick={addItem}>Add to Cart</button>
           </div>
         </div>
       </div>

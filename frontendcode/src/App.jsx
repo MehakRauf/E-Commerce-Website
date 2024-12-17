@@ -10,12 +10,13 @@ import Contact from './pages/Contact';
 import Login from './pages/Login';
 import NewProduct from './pages/NewProduct';
 import Signup from './pages/Signup';
-import { useDispatch} from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { setData } from './redux/productSlice';
+import Cart from './pages/Cart';
 
 function App() {
   const dispatch = useDispatch();
-  
+
   useEffect(() => {
     (async () => {
       const fetchData = await fetch("http://localhost:8080/products")
@@ -36,6 +37,7 @@ function App() {
           <Route path="login" element={<Login />} />
           <Route path="newproduct" element={<NewProduct />} />
           <Route path="signup" element={<Signup />} />
+          <Route path="cart" element={<Cart />} />
         </Routes>
       </div>
 

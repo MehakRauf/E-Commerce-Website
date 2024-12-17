@@ -12,7 +12,11 @@
 }
 
 .logo {
-    height: 60px;
+    height: 55px;
+    width: 120px;
+    border: red solid 2px;
+    margin-left: -30px;
+    border-radius: 50%;
 }
 
 .data {
@@ -35,12 +39,14 @@
 
 .dot {
     position: absolute;
-    width: 10px;
-    height: 10px;
+    width: 15px;
+    height: 15px;
     background-color: tomato;
     border-radius: 50%;
     left: 16px;
-    top: 5px;
+    color: white;
+    text-align: center;
+    font-size: 0.9rem;
 }
 
 .icons {

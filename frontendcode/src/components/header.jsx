@@ -9,6 +9,7 @@ import './header.css';
 import toast from 'react-hot-toast';
 
 const Header = () => {
+    const cartItem = useSelector(state => state.product.cartItems);
     const dropdownRef = useRef(null);
     const [showMenu, setShowMenu] = useState(false);
     const userData = useSelector(state => state.users);
@@ -44,9 +45,10 @@ const Header = () => {
                 <div className="icon-container">
                     <div className="icons">
                         <div>
-                            <FaCartArrowDown className="icon" />
+                            <Link to="cart">
+                                <FaCartArrowDown className="icon" /></Link>
                         </div>
-                        <span className="dot"></span>
+                        <span className="dot">{cartItem.length}</span>
                         <div onClick={toggleMenu}>
 
                             <div >
