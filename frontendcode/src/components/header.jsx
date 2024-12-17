@@ -31,7 +31,7 @@ const Header = () => {
                     <Link to="/">
                         <p className="text">Home</p>
                     </Link>
-                    <Link to="menu">
+                    <Link to="menu/675d8d83ad92a3d27c1ee5f5">
                         <p className="text">Menu</p>
                     </Link>
                     <Link to="about">

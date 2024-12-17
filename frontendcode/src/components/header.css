@@ -1,5 +1,6 @@
 .container {
     display: flex;
+    background-color: #F9F9F9;
     align-items: center;
     margin: auto;
     height: 60px;
@@ -65,19 +66,19 @@
 }
 
 .dropdown a {
-    text-decoration: none; 
+    text-decoration: none;
     color: black;
 }
 
-.container a{
-    text-decoration: none; 
+.container a {
+    text-decoration: none;
     color: black;
 }
 
 .dropdown a:visited {
-    color: black; 
+    color: black;
 }
 
-.logout{
+.logout {
     background-color: red;
 }

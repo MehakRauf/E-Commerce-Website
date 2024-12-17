@@ -1,7 +1,9 @@
 div {
-    margin: 0; /* or set a smaller value, like margin: 5px; */
-    line-height: 1; 
-  }
+    margin: 0;
+    /* or set a smaller value, like margin: 5px; */
+    line-height: 1;
+}
+
 .bikeIcon {
     height: 30px;
     width: 30px;
@@ -18,11 +20,11 @@ div {
     font-size: 2.15rem;
 }
 
-.data-container span{
+.data-container span {
     color: red;
 }
 
-.data-container p{
+.data-container p {
     font-size: 1.5rem;
 }
 
@@ -37,18 +39,18 @@ div {
     height: 40px;
 }
 
-.main2{
+.main2 {
     width: 50%;
 }
 
-.main3{
+.main3 {
     width: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.main2 button{
+.main2 button {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -56,4 +58,74 @@ div {
     height: 40px;
     background-color: red;
     color: white;
+}
+
+.order-button {
+    background-color: red;
+}
+
+.order-button:hover {
+    background-color: tomato;
+}
+
+.carousel-container {
+    display: flex;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+}
+
+.vegetables {
+    display: flex;
+    overflow-x: scroll;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+}
+
+.filter {
+    overflow-x: scroll;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+    display: flex;
+}
+
+.scroll-button {
+    color: black;
+    font-size: 40px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    position: relative;
+    z-index: 10;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.previous {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+}
+
+.next {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+}
+
+.vegetables::-webkit-scrollbar {
+    display: none;
+}
+
+.filteredData {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
 }
