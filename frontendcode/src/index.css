@@ -1,6 +1,11 @@
-*{
+* {
     font-family: "Roboto", serif;
 }
-.main{
+
+a {
+    text-decoration: none;
+}
+
+.main {
     padding-top: 60px;
 }

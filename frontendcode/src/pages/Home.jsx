@@ -46,6 +46,7 @@ const Home = () => {
             return (
               <HomeCard
                 key={el._id}
+                id={el._id}
                 name={el.name}
                 image={el.image}
                 price={el.price}
@@ -64,6 +65,7 @@ const Home = () => {
           {vegetableData.map(el => (
             <Card
               key={el._id}
+              id={el._id}
               name={el.name}
               image={el.image}
               price={el.price}
@@ -90,6 +92,7 @@ const Home = () => {
           return (
             <Card
               key={el._id}
+              id={el._id}
               name={el.name}
               image={el.image}
               price={el.price}
