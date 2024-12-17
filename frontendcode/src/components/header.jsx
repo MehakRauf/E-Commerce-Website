@@ -35,9 +35,6 @@ const Header = () => {
                     <Link to="menu/675d8d83ad92a3d27c1ee5f5">
                         <p className="text">Menu</p>
                     </Link>
-                    <Link to="about">
-                        <p className="text">About</p>
-                    </Link>
                     <Link to="contact">
                         <p className="text">Contact</p>
                     </Link>

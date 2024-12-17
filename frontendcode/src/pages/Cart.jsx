@@ -4,8 +4,11 @@ import { useSelector, useDispatch } from 'react-redux';
 import { increaseQty, decreaseQty, deleteFromCart } from '../redux/productSlice';
 import empty from '../assets/empty.gif'
 import './Cart.css';
+import toast from 'react-hot-toast';
+import { useNavigate } from 'react-router-dom';
 
 const Cart = () => {
+    const navigate = useNavigate();
     const dispatch = useDispatch();
     const cartData = useSelector(state => state.product.cartItems);
     console.log(cartData);
@@ -16,9 +19,12 @@ const Cart = () => {
             totalAmount += parseInt(cartData[i].total);
             totalQty += 1;
         }
-        console.log(totalAmount, " ", totalQty);
     }
     calculateData();
+    const handleSubmit = () => {
+        toast("Order Placed!")
+        navigate('/');
+    }
     return (
         <div className='main'>
             <div className="cart-container">
@@ -53,7 +59,7 @@ const Cart = () => {
             {cartData.length >= 1 &&
                 <div className="order-summary-container">
                     <h2 className="order-summary-title">Order Summary</h2>
-                    <form className="order-summary-form">
+                    <form className="order-summary-form" >
                         <div className="form-group">
                             <label htmlFor="name">Name:</label>
                             <input type="text" id="name" placeholder="Enter your name" />
@@ -70,7 +76,7 @@ const Cart = () => {
                             <p><strong>Total Qty:</strong> {totalQty}</p>
                             <p><strong>Total Amount:</strong> {totalAmount}</p>
                         </div>
-                        <button type="button" className="place-order-button">Place Order</button>
+                        <button type="button" className="place-order-button" onClick={handleSubmit}>Place Order</button>
                     </form>
                 </div>
             }

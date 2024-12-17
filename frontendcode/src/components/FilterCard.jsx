@@ -5,13 +5,14 @@ import './FilterCard.css'; // Make sure to import the CSS file
 const FilterCard = ({ category, onClick }) => {
     return (
         <div className="filter-card" onClick={onClick}>
-            <div>
+            < div >
                 <PiForkKnifeBold className="icon" />
-            </div>
+            </div >
             <div className="category-text">
                 {category}
             </div>
-        </div>
+        </div >
+
     )
 }
 
